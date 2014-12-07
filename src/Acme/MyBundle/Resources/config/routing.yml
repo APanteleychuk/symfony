@@ -1,0 +1,11 @@
+goods:
+    path:     /goods
+    defaults: { _controller: AcmeMyBundle:Default:goods }
+
+add_goods:
+    path:   /add_goods
+    defaults: { _controller: AcmeMyBundle:Default:add_goods }
+
+index:
+    path:   /
+    defaults: { _controller: AcmeMyBundle:Default:index }
