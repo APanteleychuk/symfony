@@ -1,4 +1,5 @@
 {% extends '@AcmeMy/Default/layout.html.twig'%}
+{% block title %}Home Page{% endblock %}
 {% block content %}
     <div class="block">
         <h2>{{ test|capitalize }}</h2>
@@ -9,19 +10,19 @@
                     <a href="mailto:Alexey.panteleychuk@gmail.com">{{ email|reverse|title }}</a>
                 </b>
         </address>
+        {% autoescape 'html' %}
+            {% set num = '<strong>1</strong>' %}
+            {{ number|raw }} - using filter |raw <br/>
+            {{ html }}
+        {% endautoescape %}
+
+        {% set code = '<code>echo $i;</code>' %}
+        {% if code is defined %}
+            <h3>Code behind this page</h3>
+            <div class="symfony-content">{{ code|raw }}</div>
+        {% endif %}
     </div>
 
-    {% autoescape 'html' %}
-        {% set num = '<strong>1</strong>' %}
-        {{ number|raw }} - using filter |raw <br/>
-        {{ html }}
-    {% endautoescape %}
-
-    {% set code = '<code>echo $i;</code>' %}
-    {% if code is defined %}
-        <h3>Code behind this page</h3>
-        <div class="symfony-content">{{ code|raw }}</div>
-    {% endif %}
 {% endblock %}
 
 
